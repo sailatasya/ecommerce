@@ -26,10 +26,5 @@ export const navLinks = [
     url: "/orders",
     icon: <ShoppingBag />,
     label: "Orders",
-  },
-  {
-    url: "/customers",
-    icon: <UsersRound />,
-    label: "Customers",
-  },
+  }
 ];
