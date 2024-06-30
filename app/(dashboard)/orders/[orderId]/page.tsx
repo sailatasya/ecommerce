@@ -20,11 +20,9 @@ const OrderDetails = async ({ params }: { params: { orderId: string }}) => {
   const res = await fetch(`${process.env.ADMIN_DASHBOARD_URL}/api/orders/${params.orderId}`);
   const { orderDetails } = await res.json();
 
-  console.log(orderDetails)
   const session = await stripe.checkout.sessions.retrieve(orderDetails.sessionId);
 
   var customer = customerInfo;
-  // const customer = session.customer ? session.customer_details : customerInfo;
 
   if (session?.customer_details) {
     customer = {
