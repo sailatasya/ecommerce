@@ -3,6 +3,8 @@ import { columns } from '@/components/customers/CustomerColumns'
 import { Separator } from '@/components/ui/separator'
 import Customer from '@/lib/models/Customer'
 import { connectToDB } from '@/lib/mongoDB'
+import { stripe } from '@/lib/stripe'
+import { clerkClient } from '@clerk/nextjs'
 
 const Customers = async () => {
   await connectToDB()
