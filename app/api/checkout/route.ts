@@ -31,8 +31,8 @@ export async function POST(req: NextRequest) {
       },
       shipping_options: [
         { shipping_rate: "shr_1PUCVpFL12zzJujOL9UV9iSA" },
-        { shipping_rate: "shr_1PUCX1FL12zzJujOJ8st9TDQ" },
-        { shipping_rate: "shr_1PUCUwFL12zzJujOLHEhAlbn" },
+        // not used: { shipping_rate: "shr_1PUCX1FL12zzJujOJ8st9TDQ" },
+        // not used: { shipping_rate: "shr_1PUCUwFL12zzJujOLHEhAlbn" },
       ],
       line_items: cartItems.map((cartItem: any) => ({
         price_data: {
@@ -58,8 +58,6 @@ export async function POST(req: NextRequest) {
     if (!session) {
       return new NextResponse("Failed to create session", { status: 500 });
     }
-
-    console.log("[checkout_POST] session: ", session)
 
     // Store it to order collection
     const newOrder = await insertOrderToDatabase(session.id, cartItems, customer, session.shipping_cost, session.customer_details, session.amount_total); 
