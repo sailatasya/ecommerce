@@ -20,7 +20,7 @@ export default async function Home() {
       <p className="text-heading2-bold">Dashboard</p>
       <Separator className="bg-grey-1 my-5" />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-10">
         <Card>
           <CardHeader className="flex flex-row justify-between items-center">
             <CardTitle>Total Revenue</CardTitle>
@@ -41,7 +41,7 @@ export default async function Home() {
           </CardContent>
         </Card>
 
-        <Card>
+        {/* <Card>
           <CardHeader className="flex flex-row justify-between items-center">
             <CardTitle>Total Customer</CardTitle>
             <UserRound className="max-sm:hidden" />
@@ -49,7 +49,7 @@ export default async function Home() {
           <CardContent>
             <p className="text-body-bold">{totalCustomers}</p>
           </CardContent>
-        </Card>
+        </Card> */}
       </div>
 
       <Card className="mt-10">
